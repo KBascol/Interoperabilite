@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Géolocalisation</title>
+  </head>
+<body>
+  <div id="infoposition"></div>
+</body>
+</html>
+
+<script>
+function maPosition(position) {
+  var infopos = "Position déterminée :\n";
+  infopos += "Latitude : "+position.coords.latitude +"\n";
+  infopos += "Longitude: "+position.coords.longitude+"\n";
+  document.getElementById("infoposition").innerHTML = infopos;
+}
+
+if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(maPosition);
+</script>
