@@ -2,13 +2,10 @@
 
 <?php
 	if($_GET["activite"]  == 'l'){
-		$pageLivres = fopen("http://ujm.eu5.org/short/dn","r");
-		$contenu = "";
-		while (!feof($pageLivres)){
-			$contenu .= fgets($pageLivres);
-		}
-		preg_match_all("/<img.*src=\"(.*)\"\sonload.*<h2.*>(.*)<\/h2>/", $contenu, $livres, PREG_SET_ORDER);
+		$pageLivre = file_get_contents("http://ujm.eu5.org/short/dn");
 		
+		
+		preg_match_all("/<img.*src=\"(.*)\"\sonload.*<h2.*>(.*)<\/h2>/", $pageLivre, $livres,PREG_SET_ORDER);
 	}
 ?>
 
@@ -34,6 +31,7 @@
 		<ol>
 			<li><a href="index.html">Accueil</a></li>
 			<li><a href="localisation.html">Localisation</a></li>
+			<li><a href="resultats2.php?activite=l">Autre methode</a></li>
 			<li><a href="http://ujm.eu5.org/short/dn">Sites livres</a></li>
 		</ol>
 	</div>
