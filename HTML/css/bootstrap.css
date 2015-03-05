@@ -1411,6 +1411,44 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+html,body {
+  height:100%;
+}
+
+h1 {
+  font-family: Arial,sans-serif
+  font-size:300px;
+  color:#DDCCEE;
+}
+
+.lead {
+  color:#DDCCEE;
+}
+
+
+/* Custom container */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+  min-height:100%;
+  background-image: url(../img/background.jpg);
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  display: compact;
+  color:#eee;
+  overflow:hidden;
+}
+
+.container-full a {
+  color:#efefef;
+  text-decoration:none;
+}
+
+.v-center {
+  margin-top:10%;
+}
+
 .row {
   margin-left: -15px;
   margin-right: -15px;
