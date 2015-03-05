@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,7 +46,7 @@ function initialize() {
   var request = {
     location: pyrmont,
     radius: query['rad'],
-    types: ['restaurant', 'bar', 'cinema', 'library']
+    types: ['restaurant', 'bar', 'movie_theater', 'library']
   };
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
@@ -100,6 +98,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
   <body>
     <div id="map-canvas"></div>
+    <!-- ?lat=45.441523611721365&lng=4.385610222816467&rad=500 Cinema test-->
   </body>
 </html>
 
