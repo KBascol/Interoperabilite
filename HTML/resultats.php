@@ -12,7 +12,7 @@
 		$i = 0; 
 		while($i < $size) {
 			echo '{';
-			echo	'"titre" : '.json_encode($titres[$i][1]).',';
+			echo	'"titre" : '.json_encode($titres[$i][1]).', ';
 			
 			echo	'"auteurs" : [';
 			$autSize = sizeof($auteurs[$i])-1;
@@ -33,4 +33,3 @@
 	}
 		
 	?>
-
