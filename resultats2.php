@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE json>
 
 <?php
 	if($_GET["activite"]  == 'l'){
@@ -10,55 +10,42 @@
 		
 		$size = sizeof($images);
 	}
-?>
-
-<html>
-
-	<head>
-		<meta name="Author" content="BKNK">
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
-		<title>Projet Interopérabilité</title>
-	</head>
-
-	<body>
-	<div id="header">
-		<img src="nyancat.png" alt="nyan cat" title="nyan cat" id="nyan">
-		<img src="arcenciel.png" alt="arc en ciel" title="arc en ciel" id="arc">
-		<div id="titre">
-			<h1>
-				Resultats
-			</h1>
-		</div>
-	</div>
-	
-	<div id="nav">
-		<ol>
-			<li><a href="index.html">Accueil</a></li>
-			<li><a href="localisation.html">Localisation</a></li>
-			<li><a href="resultats.php?activite=l">Autre methode</a></li>
-			<li><a href="http://ujm.eu5.org/short/dn">Sites livres</a></li>
-		</ol>
-	</div>
-	
-	<div id="section">
-	
-	<?php
-		for($i = 0; $i < $size; $i++) {
+		/*for($i = 0; $i < $size; $i++) {
 			echo '<div class="article"><img alt="test"  src="' . $images[$i][1]. '"><br>';
 			echo '<h2>'.$titres[$i][1].'</h2>';
+			
 			echo '<p>';
+			
 			$autSize = sizeof($auteurs[$i])-1;
 			for($j=1; $j<$autSize; $j+=2) {
 				echo $auteurs[$i][$j].", ";
 			}
 			echo $auteurs[$i][$autSize];
+			
 			echo '</p></div><br>';
+		}*/
+		echo '[';
+		$i = 0; 
+		while($i < $size) {
+			echo '{';
+			echo	'"titre" : "'.$titres[$i][1].'",';
+			
+			echo	'"auteurs" : [';
+			$autSize = sizeof($auteurs[$i])-1;
+			for($j=1; $j<$autSize; $j+=2) {
+				echo '"'.$auteurs[$i][$j].'", ';
+			}
+			echo '"'.$auteurs[$i][$autSize].'"], ';
+			
+			echo	'"image" : "'.$images[$i][1].'"';
+			echo '}';
+			
+			$i++;
+			if($i < $size){
+			 echo ', ';	
+			}
 		}
+		echo ']';
+		
 	?>
-	
-	</div>
-	</body>
-
-</html>	
 
