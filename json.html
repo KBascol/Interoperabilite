@@ -17,6 +17,7 @@
 var map;
 var info;
 var pyrmont;
+var all_types = ['restaurant', 'bar', 'movie_theater', 'library'];
 var query = {}
 
 location.search.substr(1).split("&").forEach(function(item) {query[item.split("=")[0]] = item.split("=")[1]})
@@ -43,7 +44,7 @@ function initialize() {
   var request = {
     location: pyrmont,
     radius: query['rad'],
-    types: ['restaurant', 'bar', 'movie_theater', 'library']
+    types: all_types
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: pyrmont,
@@ -54,13 +55,18 @@ function initialize() {
 }
 
 function callback(results, status) {
+  info.innerHTML += "[ ";
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createList(results[i]);
+      if ( i != (results.length - 1 )) {
+        info.innerHTML += ",";
+      }
     }
   }
   map = "";
   document.getElementById('map-canvas').innerHTML = "";
+  info.innerHTML += "]";
 }
 
 function createList(place) {
@@ -68,7 +74,19 @@ function createList(place) {
   var placeLoc = place.geometry.location;
   var distance = getDistance(placeLoc, pyrmont);
 
-  info.innerHTML += (place.name + "<br>" + place.vicinity + "<br> A : " +  Number((distance).toFixed(3)) + " metres <br>");
+  info.innerHTML += ("{ \"name\" : " + JSON.stringify(place.name) 
+                   + ", \"adress\" : " + JSON.stringify(place.vicinity) 
+                   + ", \"distance\" : " +  JSON.stringify(Number((distance).toFixed(3))) 
+                   );
+   for ( var i = 0; i < all_types.length; i++) {
+        for ( var j = 0; j < place.types.length; j++ ) {
+            if ( place.types[j] == all_types[i] ) {
+                info.innerHTML += ", \"type\" : " + JSON.stringify(place.types[j]) + " } " ;
+                return;
+            }
+        }
+    }     
+
 
 }
 
