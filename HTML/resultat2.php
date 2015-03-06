@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="./index.html">Find Your Way</a>
+              <a class="navbar-brand" href="../index.html">Find Your Way</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -92,7 +92,7 @@
                   </a>
                 </div>
                 <div class="media-body">
-                  <h3 class="media-heading"><a href="#">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
+                  <h3 class="media-heading"><a href="resultat3.php?q=library">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
                   <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
                 </div>
               </div>
