@@ -10,7 +10,21 @@
 		preg_match_all("/<span\s*class=\"lighten\">Réalisateurs?\s*<\/span>\n<\/th>\n<td>\n<a[^>]*>([^<]*)<\/a>/",$pageFilmAffiche, $realisateur, PREG_SET_ORDER);
 		preg_match_all("/<span\s*class=\"lighten\">Genres?\s*<\/th>\n\s*<td>\n\s*<[^<]*<[^>]*>([^<]*)<\/span>/",$pageFilmAffiche, $genre, PREG_SET_ORDER);
 		$size = sizeof($titre);
-	
+	}
+		/*for($i = 0; $i < $size; $i++) {
+			echo '<div class="article"><img alt="test"  src="' . $images[$i][1]. '"><br>';
+			echo '<h2>'.$titres[$i][1].'</h2>';
+			
+			echo '<p>';
+			
+			$autSize = sizeof($auteurs[$i])-1;
+			for($j=1; $j<$autSize; $j+=2) {
+				echo $auteurs[$i][$j].", ";
+			}
+			echo $auteurs[$i][$autSize];
+			
+			echo '</p></div><br>';
+		}*/
 		echo '[';
 		$i = 0; 
 		while($i < $size) {
@@ -38,7 +52,6 @@
 			}
 		}
 		echo ']';
-	}
 		
 	?>
 
