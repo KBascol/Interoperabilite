@@ -17,7 +17,7 @@
 var map;
 var info;
 var pyrmont;
-var all_types = ['restaurant', 'bar', 'movie_theater', 'library'];
+var all_types = [];
 var query = {}
 
 location.search.substr(1).split("&").forEach(function(item) {query[item.split("=")[0]] = item.split("=")[1]})
@@ -39,6 +39,7 @@ var getDistance = function(p1, p2) {
 };
 
 function initialize() {
+  all_types = [ query['q'] ];
   pyrmont = new google.maps.LatLng(query['lat'], query['lng']);
   info = document.getElementById('info');
   var request = {
