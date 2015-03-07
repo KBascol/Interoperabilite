@@ -73,7 +73,7 @@
                   <span class="name">Cinéma Alhambra</span>
                   <hr class="star-light">
                   <p>votre avis nous améliore</p>
-                  <?php include('vote.php'); ?>
+                  <?php include('./include/vote.php'); ?>
                 </div>
               </div>
             </div>
@@ -85,124 +85,18 @@
         <section>
           <div class="container">
 
-			<?php 
-				include ("recherche.php");
-				
+			<?php				
 				if($_GET["q"] == "movie_theater"){
-
-					for($i = 0; $i< $size; $i++) {
-			?>
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                    <img class="media-object" src="<?php echo $image[$i][1]; ?>" alt="..." style="height: 237px; width:160px;">
-                </div>
-                <div class="media-body" style="font-size:13px;">
-                  <h4 class="media-heading"><?php echo $titre[$i][1]; ?></h4>
-                  <span><?php echo $description[$i][1]; ?></span><br>
-                  <b>Date de sortie : </b><span><?php echo $information[$i][3];?> (<?php echo $information[$i][2]; ?>)</span><br>
-                  <b>Réalisé par : </b><span><?php echo $realisateur[$i][1]; ?></span><br>
-                  <b>Genre : </b><span><?php echo $information[$i][2]; ?></span><br>
-                  <b>Nationalité : </b><span><?php echo "Inconue"; ?></span><br>
-                  <b>Horaires et séances : </b><br>
-                  <ul>
-                    <li><b>Vendredi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                    <li><b>Samedi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                    <li><b>Dimanche : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span></li>
-                    <li><b>Lundi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                    <li><b>Mardi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-			<?php
-					}
+                    include ("./include/resultat_cine.php");
 				} else if($_GET["q"] == "library"){
-
-					for($i = 0; $i< $size; $i++) {
-			?>
-
-            <!-- un row qui contient les information d'un livre -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                    <img class="media-object" src="<?php echo $images[$i][1]; ?>" alt="<?php echo $titres[$i][1]; ?>" style="height: 90px; width:100px;">
-                </div>
-                <div class="media-body" style="font-size:13px;">
-                  <h4 class="media-heading"><?php echo $titres[$i][1]; ?></h4>
-				  <b>Description : </b><span><?php if(isset($description[$i][2])){ echo descr($description[$i][2]); } else { echo "Pas de description disponible"; } ?></span><br>
-                  <b>Auteur(s) : </b>
-				  <span><?php 
-						$autSize = sizeof($auteurs[$i])-1;
-						for($j=1; $j<$autSize; $j+=2) {
-							echo $auteurs[$i][$j].', ';
-						}
-						echo $auteurs[$i][$autSize];
-					?></span>
-                  
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-			<?php
-					}
-				} else if($_GET["q"] == "restaurant"){
-			?>
-
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                    <img class="media-object" src="img/50n.jpg" alt="..." style="height: 237px; width:160px;">
-                </div>
-                <div class="media-body" style="font-size:13px;">
-                  <h4 class="media-heading">Cinquante Nuances de Grey</h4>
-                  <span>L'histoire d'une romance passionnelle, et sexuelle, entre un jeune homme riche amateur de femmes, et une étudiante vierge de 22 ans.</span><br>
-                  <b>Date de sortie : </b><span>11 février 2015 (2h5min)</span><br>
-                  <b>Réalisé par : </b><span>Sam Taylor-Johnson</span><br>
-                  <b>Genre : </b><span>Erotique , Drame , Romance</span><br>
-                  <b>Nationalité : </b><span>Américain</span><br>
-                  <b>Horaires et séances : </b><br>
-                  <ul>
-                    <li><b>Vendredi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                    <li><b>Samedi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                    <li><b>Dimanche : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span></li>
-                    <li><b>Lundi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                    <li><b>Mardi : </b> <span class="label label-success">13:50</span> <span class="label label-success">16:30</span> <span class="label label-success">19:10</span> <span class="label label-success">21:45</span> </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-			<?php
+                    include ("./include/resultat_livre.php");
+				} else if($_GET["q"] == "restaurant") {
+				    include ("./include/resultat_resto.php");
 				} else {
-					for ( $j = 1; $j < 26; $j++ ) {
-						echo '<div class="row">
-								<div class="media col-lg-10 col-lg-offset-1">
-									<div class="media-left">
-										<img class="media-object" src="'.$out[1][$j].'" alt="..." style="height: 90px; width:100px;">
-									</div>
-									<div class="media-body" style="font-size:13px;">
-										<h4 class="media-heading">'.$out[2][$j].'</h4>
-										<span>'.$out[3][$j].'</span><br>
-										<b>Ingrédients : </b>'.$out[4][$j].'
-									</div>
-								</div>
-							</div>
-							<br><br>';
-					}
+					include ("./include/resultat_bar.php");
 				}
 			?>
           </section>   
-
 
           <!-- Footer -->
           <footer class="text-center">

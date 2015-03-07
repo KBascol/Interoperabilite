@@ -98,7 +98,7 @@
                                 <img src="img/cinema.jpg" alt="cinema" class="img-circle">
                                 <div class="caption">
                                   <h3>Cinéma</h3>
-                                  <p><a href="./resultat2.php?q=movie_theater" class="btn btn-primary" role="button">Voir plus</a></p>
+                                  <p><a href="./resultat2.php?q=movie_theater&lat=<?= $_GET['lat'] ?>&lng=<?= $_GET['lng'] ?>&rad=<?= $_GET['rad'] ?>" class="btn btn-primary" role="button">Voir plus</a></p>
                               </div>
                           </div>
                       </div>
@@ -108,7 +108,7 @@
                             <img src="img/restaurant.jpg" alt="restaurant" class="img-circle">
                             <div class="caption">
                               <h3>Réstaurant</h3>
-                              <p><a href="./resultat2.php?q=restaurant" class="btn btn-primary" role="button">Voir plus</a></p>
+                              <p><a href="./resultat2.php?q=restaurant&lat=<?= $_GET['lat'] ?>&lng=<?= $_GET['lng'] ?>&rad=<?= $_GET['rad'] ?>" class="btn btn-primary" role="button">Voir plus</a></p>
                           </div>
                       </div>
                   </div>
@@ -118,7 +118,7 @@
                         <img src="img/bar.jpg" alt="bar" class="img-circle">
                         <div class="caption">
                           <h3>Bar</h3>
-                          <p><a href="./resultat2.php?q=bar" class="btn btn-primary" role="button">Voir plus</a></p>
+                          <p><a href="./resultat2.php?q=bar&lat=<?= $_GET['lat'] ?>&lng=<?= $_GET['lng'] ?>&rad=<?= $_GET['rad'] ?>" class="btn btn-primary" role="button">Voir plus</a></p>
                       </div>
                   </div>
               </div>
@@ -128,7 +128,7 @@
                     <img src="img/library.jpg" alt="library" class="img-circle">
                     <div class="caption">
                       <h3>Librairie</h3>
-                      <p><a href="./resultat2.php?q=library" class="btn btn-primary" role="button">Voir plus</a></p>
+                      <p><a href="./resultat2.php?q=library&lat=<?= $_GET['lat'] ?>&lng=<?= $_GET['lng'] ?>&rad=<?= $_GET['rad'] ?>" class="btn btn-primary" role="button">Voir plus</a></p>
                   </div>
               </div>
           </div>
@@ -162,17 +162,12 @@
     <script src="js/freelancer.js"></script>
     
     <script>
-    var query = {};
-    
-    location.search.substr(1).split("&").forEach(function(item) {query[item.split("=")[0]] = item.split("=")[1]})
-    function maPosition(position) {
-    
-      var infopos = "./map.html?lat="+position.coords.latitude + "&lng="+ position.coords.longitude + "&rad=" + query['rad'];
-      document.getElementById("map").src = infopos;
-    }
-        if(navigator.geolocation)
-          navigator.geolocation.getCurrentPosition(maPosition);
-          
+        var query = {};
+        
+        location.search.substr(1).split("&").forEach(function(item) {query[item.split("=")[0]] = item.split("=")[1]})
+        
+        var infopos = "./map.html?lat="+ query['lat'] + "&lng="+ query['lng'] + "&rad=" + query['rad'];
+        document.getElementById("map").src = infopos;
   </script>
 </body>
 

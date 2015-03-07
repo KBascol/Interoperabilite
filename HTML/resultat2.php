@@ -82,7 +82,32 @@
 
         <section>
           <div class="container">
+            <?php 
+                $getdata = http_build_query(
+                    array(
+                        'q' => $_GET['q'],
+                        'lat' => $_GET['lat'],
+                        'lng'=> $_GET['lng'],
+                        'rad'=> $_GET['rad'],
+                    )
+                );
+                
+                $opts = array('http' =>
+                    array(
+                        'method'  => 'GET'
+                    )
+                );
 
+                $context  = stream_context_create($opts);
+
+                $page = file_get_contents("http://ujm.eu5.org/int/HTML/json.html?".$getdata, false, $context);
+                
+                $json = preg_replace('/[^@]*<div id=\"info\">([^<]*)<[^@]*/', '$1', $page);
+                echo "JSON" . $json;
+                // $obj = json_decode($json, true);
+                // print_r($obj);
+                // $obj['titre'];
+            ?>
             <!-- un row qui contient les information d'un ciné -->
             <div class="row">
               <div class="media col-lg-10 col-lg-offset-1">
