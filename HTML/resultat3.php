@@ -73,7 +73,7 @@
                   <span class="name">Cinéma Alhambra</span>
                   <hr class="star-light">
                   <p>votre avis nous améliore</p>
-                  <p><a href="" style="padding-right:5px;"> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 4em; color:#fff;">  </span></a><b><span class="glyphicon glyphicon-heart" style="color:#ee0077"> </span> 25 <span class="glyphicon glyphicon-heart" style="color:#ee0077"> </span> </b></span><a href="" style="padding-left:5px;"><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 4em; color:#ec4151"> </span> </a> </p>
+                  <?php include('vote.php'); ?>
                 </div>
               </div>
             </div>
@@ -243,7 +243,58 @@
 
           <!-- Custom Theme JavaScript -->
           <script src="js/freelancer.js"></script>
+          <script>
+            (function(){
+                var vm = document.getElementById('votemoins');
+                var like = document.getElementById('like_javascript');
+                var vp = document.getElementById('voteplus');
 
+                // Si on clique sur votemoins
+                vm.addEventListener('click', function(e){
+                    // On annule le chargement de la page
+                    e.preventDefault();
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', vm);
+
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            // Si on a effectué la requête, l'utilisateur ne peut plus voter donc on efface les votes
+                            vp.parentElement.removeChild(vp);
+                            vm.parentElement.removeChild(vm);
+                            // On incrémente le compteur
+                            like.innerHTML = parseInt(like.innerHTML) - 1;
+                        }
+                    };
+
+                    xhr.send(null);
+                },
+                false);
+
+                // Si on clique sur votemoins
+                vp.addEventListener('click', function(e){
+                    e.preventDefault();
+                    content.innerHTML = '';
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', vp);
+
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            // Si on a effectué la requête, l'utilisateur ne peut plus voter donc on efface les votes
+                            vp.parentElement.removeChild(vp);
+                            vm.parentElement.removeChild(vm);
+                            // On incrémente le compteur
+                            like.innerHTML = parseInt(like.innerHTML) + 1;
+
+                        }
+                    };
+
+                    xhr.send(null);
+                },
+                false);
+
+            })();
+          </script>
         </body>
 
         </html>
