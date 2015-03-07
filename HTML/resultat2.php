@@ -18,7 +18,6 @@
         <!-- Section -->
 
         <section>
-          <div class="container">
             <?php 
                 $getdata = http_build_query(
                     array(
@@ -37,118 +36,9 @@
 
                 $context  = stream_context_create($opts);
 
-                $page = file_get_contents("http://ujm.eu5.org/int/HTML/json.html?".$getdata, false, $context);
-                
-                $json = preg_replace('/[^@]*<div id=\"info\">([^<]*)<[^@]*/', '$1', $page);
-                echo "JSON" . $json;
-                // $obj = json_decode($json, true);
-                // print_r($obj);
-                // $obj['titre'];
+                $page = file_get_contents("http://localhost/Interoperabilite/HTML/json.html?".$getdata, false, $context);
+				echo $page;
             ?>
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="img/cinema.jpg" alt="..." style="height: 60px;">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><a href="resultat3.php?q=library">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
-                  <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="img/cinema.jpg" alt="..." style="height: 60px;">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><a href="#">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
-                  <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="img/cinema.jpg" alt="..." style="height: 60px;">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><a href="#">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
-                  <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="img/cinema.jpg" alt="..." style="height: 60px;">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><a href="#">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
-                  <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="img/cinema.jpg" alt="..." style="height: 60px;">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><a href="#">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
-                  <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
-                </div>
-              </div>
-            </div>
-            <!--/row-->
-
-            <br><br>
-
-            <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
-              <div class="media col-lg-10 col-lg-offset-1">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="img/cinema.jpg" alt="..." style="height: 60px;">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><a href="#">Alhambra ciné</a> <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size: 1em;"> </span></a> <a href=""><span class="glyphicon glyphicon-thumbs-down"aria-hidden="true" style="font-size: 1em; color:#ec4151"></span></a></h3>
-                  <p>Un cinéma pas comme les autre, au pire Nico tu peux supprimé cette partie ;) qsfkjjfd flkjs dflksdj flsdj</p>
-                </div>
-              </div>
-            </div>
             <!--/row-->
           </section>   
 
