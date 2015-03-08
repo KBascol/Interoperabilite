@@ -88,6 +88,20 @@
             +"</div>"
             +"</div>"
             +"</div><br><br>";
+            +"<div class=\"media col-lg-10 col-lg-offset-1\">"
+            +"<div class=\"media-left\">"
+            +"<a href=\"#\">"
+            +"<img class=\"media-object\" src="+ imgType(all_types) +" alt=\"...\" style=\"height: 60px;\">"
+            +"</a>"
+            +"</div>"
+            +"<div class=\"media-body\">"
+            +"<h3 class=\"media-heading\"><a href=\"resultat3.php?q="+ all_types +"&nom="+ formatAdr(place.name) +"&adr="+ formatAdr(place.vicinity) +"\">"+ place.name +"</a> <a href=\"\"><span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\" style=\"font-size: 1em;\">"
+            +"</span></a> <a href=\"\"><span class=\"glyphicon glyphicon-thumbs-down\" aria-hidden=\"true\" style=\"font-size: 1em; color:#ec4151\"></span></a></h3>"
+            +"<p>Distance: "+ Number((distance).toFixed(3)) +" mètres</p>"
+            +"<p>Adresse: "+ place.vicinity +"</p>"
+            +"</div>"
+            +"</div>"
+            +"</div><br><br>";
         }
 
         function imgType(type){

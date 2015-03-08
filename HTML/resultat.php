@@ -27,9 +27,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
-                          <div class="col-lg-8 col-lg-offset-2 text-center">
+                          <div class="col-lg-12 text-center">
 
-                            <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-3">
                               <div class="thumbnail">
                                 <img src="img/cinema.jpg" alt="cinema" class="img-circle">
                                 <div class="caption">
@@ -39,7 +39,7 @@
                           </div>
                       </div>
 
-                      <div class="col-sm-6 col-md-4">
+                      <div class="col-sm-6 col-md-3">
                           <div class="thumbnail">
                             <img src="img/restaurant.jpg" alt="restaurant" class="img-circle">
                             <div class="caption">
@@ -49,7 +49,7 @@
                       </div>
                   </div>
 
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-sm-6 col-md-3">
                       <div class="thumbnail">
                         <img src="img/bar.jpg" alt="bar" class="img-circle">
                         <div class="caption">
@@ -59,7 +59,7 @@
                   </div>
               </div>
 
-              <div class="col-sm-6 col-md-4">
+              <div class="col-sm-6 col-md-3">
                   <div class="thumbnail">
                     <img src="img/library.jpg" alt="library" class="img-circle">
                     <div class="caption">
