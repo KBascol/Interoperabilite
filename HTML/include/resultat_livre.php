@@ -17,15 +17,15 @@ for($i = 0; $i< $size; $i++) {
         </div>
         <div class="media-body" style="font-size:13px;">
           <h4 class="media-heading"><?php echo $titres[$i][1]; ?></h4>
-		  <b>Description : </b><span><?php if(isset($description[$i][2])){ echo descr($description[$i][2]); } else { echo "Pas de description disponible"; } ?></span><br>
+          <b>Description : </b><span><?php if(isset($description[$i][2])){ echo descr($description[$i][2]); } else { echo "Pas de description disponible"; } ?></span><br>
           <b>Auteur(s) : </b>
-		  <span><?php 
-				$autSize = sizeof($auteurs[$i])-1;
-				for($j=1; $j<$autSize; $j+=2) {
-					echo $auteurs[$i][$j].', ';
-				}
-				echo $auteurs[$i][$autSize];
-			?></span>
+          <span><?php 
+                $autSize = sizeof($auteurs[$i])-1;
+                for($j=1; $j<$autSize; $j+=2) {
+                    echo $auteurs[$i][$j].', ';
+                }
+                echo $auteurs[$i][$autSize];
+            ?></span>
           
         </div>
       </div>

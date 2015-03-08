@@ -22,17 +22,17 @@
         <section>
           <div class="container">
 
-			<?php				
-				if($_GET["q"] == "movie_theater"){
+            <?php                
+                if($_GET["q"] == "movie_theater"){
                     include ("./include/resultat_cine.php");
-				} else if($_GET["q"] == "library"){
+                } else if($_GET["q"] == "library"){
                     include ("./include/resultat_livre.php");
-				} else if($_GET["q"] == "restaurant") {
-				    include ("./include/resultat_resto.php");
-				} else {
-					include ("./include/resultat_bar.php");
-				}
-			?>
+                } else if($_GET["q"] == "restaurant") {
+                    include ("./include/resultat_resto.php");
+                } else {
+                    include ("./include/resultat_bar.php");
+                }
+            ?>
           </section>   
 
           <script>
@@ -84,8 +84,7 @@
                     xhr.send(null);
                 },
                 false);
-
             })();
           </script>
-		  
+
 <?php include "include/footer.php"; ?>
