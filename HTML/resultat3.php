@@ -1,4 +1,6 @@
-<?php include "include/header.php"; ?>
+<?php
+    include "include/header.php";
+?>
 
 
         <!-- Header -->
@@ -7,7 +9,11 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="intro-text">
-                  <span class="name">Cinéma Alhambra</span>
+                  <span class="name">
+                  <?php
+                    echo preg_replace("/\_/"," ",$_GET['nom']);
+                  ?>
+                  </span>
                   <hr class="star-light">
                   <p>votre avis nous améliore</p>
                   <?php include('./include/vote.php'); ?>
@@ -34,6 +40,18 @@
                 }
             ?>
           </section>   
+
+          <div class="col-lg-6 col-lg-offset-3 v-center" style="background-color:#2c3e50; margin-top:100px; padding-bottom:30px; border-radius:10px;">
+                  <h3>Ajoutez votre position !</h3>
+                  <br>
+                  <form class="col-lg-12" action="#" method="">
+                    <div class="input-group" style="width:500px;text-align:center;margin:0 auto;">
+                      <input class="form-control input-lg" name="" placeholder="Nom du lieu" type="text">
+                      <span class="input-group-btn"><input class="btn btn-lg btn-primary" value="Ajouter" type="submit" style="background-color:#18bc9c;border-color:#18bc9c"></span>
+                    </div>
+                  </form>
+                </div>
+
 
           <script>
             (function(){
