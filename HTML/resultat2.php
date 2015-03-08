@@ -19,25 +19,7 @@
 
         <section>
             <?php 
-                $getdata = http_build_query(
-                    array(
-                        'q' => $_GET['q'],
-                        'lat' => $_GET['lat'],
-                        'lng'=> $_GET['lng'],
-                        'rad'=> $_GET['rad'],
-                    )
-                );
-                
-                $opts = array('http' =>
-                    array(
-                        'method'  => 'GET'
-                    )
-                );
-
-                $context  = stream_context_create($opts);
-
-                $page = file_get_contents("http://localhost/Interoperabilite/HTML/json.html?".$getdata, false, $context);
-				echo $page;
+                include "json.html";
             ?>
             <!--/row-->
           </section>   
