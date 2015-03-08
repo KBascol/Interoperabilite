@@ -3,7 +3,8 @@
 $ch = curl_init();
  
 // Définition de l'URL et autres options appropriées
-curl_setopt($ch, CURLOPT_URL, "http://www.google.fr/search?q=allocine+rue+praire+saint+etienne");
+echo "http://www.google.fr/search?q=allocine+".$_GET['adr'];
+curl_setopt($ch, CURLOPT_URL, "http://www.google.fr/search?q=allocine+".$_GET['adr']);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
  
@@ -11,18 +12,20 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $ret=curl_exec($ch);
 // Fermeture de la ressource cURL et libération des ressources systèmes
 curl_close($ch);
- 
+
 preg_match("#http://www.allocine\.fr/seance/[^&]*#",$ret,$res);
-$pageFilmAffiche = file_get_contents($res[0]);
 
-preg_match_all("/<\!--\s*picturezone\s*-->\n<div[^*<\/]*<\/div>\n<[^>]*>\n<[^>]*>\n<h2>\n<[^>]*>([^<]*)<\/a>/", $pageFilmAffiche, $titre,PREG_SET_ORDER);
-preg_match_all("/<\!--\s*\/notationbar\s*-->\n<p>\n([^<]*)<\/p>/", $pageFilmAffiche, $description, PREG_SET_ORDER);
-preg_match_all("/<\!--\s*class=\"titlebar\"\s*-->\n<p>\n(.*)\n\(([^\)]*)\)\n[^<]*<b>([^<]*)<\/b>/",$pageFilmAffiche, $information, PREG_SET_ORDER);
-preg_match_all("/<p>\nDe\s<a\shref=\'\/personne\/fichepersonne_gen_cpersonne=[^>]*>([^<]*)<\/a>/",$pageFilmAffiche, $realisateur, PREG_SET_ORDER);
-preg_match_all("/<a\shref=\"\/film\/fichefilm_gen_cfilm=[^>]*><img\ssrc=\'([^\']*)\'[^>]*><\/a>/", $pageFilmAffiche, $image, PREG_SET_ORDER);
-$size = sizeof($titre);
+if(isset($res[0])){
+    $pageFilmAffiche = file_get_contents($res[0]);
 
-for($i = 0; $i< $size; $i++) {
+    preg_match_all("/<\!--\s*picturezone\s*-->\n<div[^*<\/]*<\/div>\n<[^>]*>\n<[^>]*>\n<h2>\n<[^>]*>([^<]*)<\/a>/", $pageFilmAffiche, $titre,PREG_SET_ORDER);
+    preg_match_all("/<\!--\s*\/notationbar\s*-->\n<p>\n([^<]*)<\/p>/", $pageFilmAffiche, $description, PREG_SET_ORDER);
+    preg_match_all("/<\!--\s*class=\"titlebar\"\s*-->\n<p>\n(.*)\n\(([^\)]*)\)\n[^<]*<b>([^<]*)<\/b>/",$pageFilmAffiche, $information, PREG_SET_ORDER);
+    preg_match_all("/<p>\nDe\s<a\shref=\'\/personne\/fichepersonne_gen_cpersonne=[^>]*>([^<]*)<\/a>/",$pageFilmAffiche, $realisateur, PREG_SET_ORDER);
+    preg_match_all("/<a\shref=\"\/film\/fichefilm_gen_cfilm=[^>]*><img\ssrc=\'([^\']*)\'[^>]*><\/a>/", $pageFilmAffiche, $image, PREG_SET_ORDER);
+    $size = sizeof($titre);
+
+    for($i = 0; $i< $size; $i++) {
 ?>
     <!-- un row qui contient les information d'un ciné -->
     <div class="row">
@@ -52,6 +55,13 @@ for($i = 0; $i< $size; $i++) {
 
     <br><br>
 <?php
+    }
+}
+else {
+?>
+    <div class="row">
+        <h4  class="media-heading">Séances introuvables.<h4>
+    </div>
+<?php
 }
 ?>
-

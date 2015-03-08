@@ -81,7 +81,7 @@
                           +"</a>"
                         +"</div>"
                         +"<div class=\"media-body\">"
-                          +"<h3 class=\"media-heading\"><a href=\"resultat3.php?q="+ all_types +"\">"+ place.name +"</a> <a href=\"\"><span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\" style=\"font-size: 1em;\">"
+                          +"<h3 class=\"media-heading\"><a href=\"resultat3.php?q="+ all_types +"&adr="+ formatAdr(place.vicinity) +"\">"+ place.name +"</a> <a href=\"\"><span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\" style=\"font-size: 1em;\">"
                           +"</span></a> <a href=\"\"><span class=\"glyphicon glyphicon-thumbs-down\" aria-hidden=\"true\" style=\"font-size: 1em; color:#ec4151\"></span></a></h3>"
                           +"<p>Distance: "+ Number((distance).toFixed(3)) +"</p>"
                           +"<p>Adresse: "+ place.vicinity +"</p>"
@@ -103,6 +103,12 @@
             else {
                 return "\"img/library.jpg\"";
             }
+        }
+        
+        function formatAdr(adr){
+            var regexFormat = new RegExp("((\\s|\\n|'|,)+)", "g");
+
+            return adr.replace(regexFormat, "+");
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
