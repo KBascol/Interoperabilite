@@ -6,6 +6,7 @@
 
 body {
     overflow-x: hidden;
+    height: 100%;
 }
 
 p {
@@ -172,6 +173,7 @@ header .intro-text .skills {
 
 section {
     padding: 100px 0;
+    min-height: 100%;
 }
 
 section h2 {
@@ -327,7 +329,6 @@ form .row:first-child .floating-label-form-group {
 
 footer {
     color: #fff;
-    position:fixed;
     bottom:0;
     left:0;
     width:100%;
