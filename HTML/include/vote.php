@@ -1,10 +1,7 @@
 <?php
 // Si on a bien deux paramètres
 if ( isset($_GET['nom']) ) {
-    $bdd_nom_serveur = 'localhost';
-    $bdd_user = 'root';
-    $bdd_mdp = 'root';
-    $bdd = 'Interrop';
+    include('./identifiant.php');
     
     $link = mysqli_connect($bdd_nom_serveur, $bdd_user, $bdd_mdp, $bdd) 
                 or die("Impossible de se connecter : " . mysql_error());
