@@ -66,7 +66,7 @@
             }
             map = "";
             document.getElementById('map-canvas').innerHTML = "";
-            liste.innerHTML = toutListe;
+            liste.innerHTML += toutListe;
         }
 
         function createList(place) {
@@ -116,5 +116,5 @@
 
         <div id="map-canvas" style="height: 0px; width: 0px;"></div>
         <div id="liste" class="container">
-
+            <?php include ("./include/affiche_bdd.php"); ?>
         </div>

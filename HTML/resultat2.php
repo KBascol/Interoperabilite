@@ -34,7 +34,7 @@
 
 <section>
   <?php 
-  include "json.html";
+  include("json.php");
   ?>
   <!--/row--> 
 
@@ -47,8 +47,6 @@
   
 
 </section>   
-
-<?php include "include/footer.php"; ?>
 
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
@@ -86,4 +84,6 @@
     </div>
   </div>
 </div>
+
+<?php include "include/footer.php"; ?>
 
