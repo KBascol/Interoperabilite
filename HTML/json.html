@@ -50,22 +50,21 @@
 		}
 
 		function callback(results, status) {
+			var toutListe = "";
 		  if (status == google.maps.places.PlacesServiceStatus.OK) {
 			for (var i = 0; i < results.length; i++) {
-			  createList(results[i]);
+			  toutListe += createList(results[i]);
 			}
 		  }
 		  map = "";
 		  document.getElementById('map-canvas').innerHTML = "";
+		  liste.innerHTML = toutListe;
 		}
 
 		function createList(place) {
-		  
 		  var placeLoc = place.geometry.location;
-		  var distance = getDistance(placeLoc, pyrmont);
-
-				liste.innerHTML(
-					"<div class=\"row\">"
+		  var distance = getDistance(placeLoc, pyrmont); 
+					return "<div class=\"row\">"
 					  +"<div class=\"media col-lg-10 col-lg-offset-1\">"
 						+"<div class=\"media-left\">"
 						  +"<a href=\"#\">"
@@ -79,8 +78,7 @@
 						  +"<p>Adresse: "+ place.vicinity +"</p>"
 						+"</div>"
 					  +"</div>"
-					+"</div><br><br>"
-				);
+					+"</div><br><br>";
 		}
 
 		function imgType(type){
