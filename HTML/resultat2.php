@@ -45,7 +45,7 @@
       <form class="col-lg-12" action="#" method="">
         <div class="input-group col-lg-10" style="text-align:center;margin:0 auto;">
           <input class="form-control input-lg" name="" placeholder="Nom du lieu" type="text">
-          <span class="input-group-btn"><input class="btn btn-lg btn-primary" value="Ajouter" type="submit" style="background-color:#18bc9c;border-color:#18bc9c"></span>
+          <span class="input-group-btn"><input class="btn btn-lg btn-primary" value="Ajouter le lieu" type="submit" style="background-color:#18bc9c;border-color:#18bc9c"></span>
         </div>
       </form>
     </div>
