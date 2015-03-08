@@ -3,7 +3,6 @@
 $ch = curl_init();
  
 // Définition de l'URL et autres options appropriées
-echo "http://www.google.fr/search?q=allocine+".$_GET['adr'];
 curl_setopt($ch, CURLOPT_URL, "http://www.google.fr/search?q=allocine+".$_GET['adr']);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

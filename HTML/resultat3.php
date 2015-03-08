@@ -1,4 +1,6 @@
-<?php include "include/header.php"; ?>
+<?php
+    include "include/header.php";
+?>
 
 
         <!-- Header -->
@@ -7,7 +9,11 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="intro-text">
-                  <span class="name">Cinéma Alhambra</span>
+                  <span class="name">
+                  <?php
+                    echo preg_replace("/\_/"," ",$_GET['nom']);
+                  ?>
+                  </span>
                   <hr class="star-light">
                   <p>votre avis nous améliore</p>
                   <?php include('./include/vote.php'); ?>

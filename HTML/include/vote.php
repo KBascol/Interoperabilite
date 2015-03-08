@@ -3,7 +3,7 @@
 if ( isset($_GET['nom']) ) {
     $bdd_nom_serveur = 'localhost';
     $bdd_user = 'root';
-    $bdd_mdp = 'root';
+    $bdd_mdp = '';
     $bdd = 'Interrop';
     
     mysql_connect($bdd_nom_serveur, $bdd_user, $bdd_mdp) 
