@@ -73,16 +73,16 @@
 \subsection{Description du projet}
 \begin{flushleft}
 \textbf{Find your way} est un logiciel de type "smart-cities" permettant de localiser toutes les activités à proximité de la position de l'utilisateur, dans un rayon donné pour celui-ci.\\
-Parmi les activités localisées par le logiciel, on y trouve les cinéma, les librairie, les bars, et les restaurants. Pour chacune de ses activités, le logiciel est capable de réunir des informations utiles tel que les prix des menus d'un restaurant désigné par l'utilisateur, les horaires des séances d'un film pour un cinéma donné, etc.
-\textbf{Find your way} utilise plusieurs sources de données et de format différents, qui justifie sa composante d'interopérabilité. On y trouve des données de géolocalisation, des données extraites des pages web de site internet, en plus d'utiliser des données stockées dans une base de donnée que les utilisateurs peuvent compléter.
-Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisation de l'utilisateur et des activités à proximité de celui-ci. Puis dans un deuxième temps, la recherche d'information pour des divers activités localisés. Dans un troisième temps, une description du système d'introduction d'information par l'utilisateur dans la base de donnée du logiciel.
+Parmi les activités localisées par le logiciel, on y trouve les cinémas, les bibliothèques, les bars, et les restaurants. Pour chacune de ses activités, le logiciel est capable de réunir des informations utiles telles que les prix des menus d'un restaurant désigné par l'utilisateur, les horaires des séances d'un film pour un cinéma donné, etc.
+\textbf{Find your way} utilise plusieurs sources de données et de formats différents, qui justifie sa composante d'interopérabilité. On y trouve des données de géolocalisation, des données extraites des pages web de sites internet, en plus d'utiliser des données stockées dans une base de données que les utilisateurs peuvent compléter.
+Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisation de l'utilisateur et des activités à proximité de celui-ci. Puis dans un deuxième temps, la recherche d'information pour des diverses activités localisés. Dans un troisième temps, une description du système d'introduction d'information par l'utilisateur dans la base de données du logiciel.
 
 \end{flushleft}
 
 \subsection{Outils et supports}
 
 \begin{flushleft}
-\textbf{Find your way} est une application web réalisée avec divers outils et supports décrient dans cette liste :
+\textbf{Find your way} est une application web réalisée avec divers outils et supports décrits dans cette liste :
 
 \begin{itemize}
 
@@ -91,9 +91,14 @@ Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisat
 	https://developers.google.com/maps/documentation/javascript/
 \end{verbatim} 
 
-\item Framework x?  à complete Bachir
+\item Bootstrap.
 
 \item Langage PHP, javascript, HTML, CSS. 
+
+\item Regex101 qui permet de tester en ligne des expressions régulières.
+\begin{verbatim}
+	Voir https://regex101.com/ 
+\end{verbatim}
 
 \end{itemize}
 \end{flushleft}
@@ -106,18 +111,18 @@ Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisat
 
 \subsection{Description de la fonctionnalité}
 \begin{flushleft}
-La géolocalisation nous permet de savoir avec plus ou moins d'exactitude la position d'une personne. Ceci ayant pour but de pouvoir identifier a l'aide des API Google map les lieux a proximité d'une personne. \\
+La géolocalisation nous permet de savoir avec plus ou moins d'exactitude la position d'une personne. Ceci ayant pour but de pouvoir identifier à l'aide des API Google map les lieux à proximité d'une personne. \\
 
-Il s'agit de la base de notre concepte, pouvoir localiser une personne.
+Il s'agit de la base de notre concept, pouvoir localiser une personne.
 \end{flushleft}
 
 \subsection{Description technique}
 \begin{flushleft}
-La géolocalisation se fait a l'aide de l'HTML5 et ses nouvelles fonctionnalité. Nous passons ensuite les informations a gooogle map pour avoir la liste des lieux a proximité de la personne dans un rayon donné. \\
-Nous obtenons alors une liste de lieu dans le format JSon que nous devons interpréter et retirer les bonnes informations.\\
-Ses lieux sont ensuite affiché sur la carte à l'aide marqueur. Grâce a du Javascript. \\
+La géolocalisation se fait à l'aide de l'HTML5 et ses nouvelles fonctionnalités. Nous passons ensuite les informations à gooogle map pour avoir la liste des lieux à proximité de la personne dans un rayon donné. \\
+Nous obtenons alors une liste de lieu dans le format Json que nous devons interpréter et en retirer les bonnes informations.\\
+Ses lieux sont ensuite affichés sur la carte à l'aide marqueur. Grâce à du Javascript. \\
 
-Pour le calcule de distance, nous avons du implémenter ceci : 
+Pour le calcul de distance, nous avons dû implémenter ceci : 
 \begin{verbatim}
 	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien$ 
 \end{verbatim}
@@ -132,7 +137,7 @@ Pour le calcule de distance, nous avons du implémenter ceci :
 
 \subsection{Description de la fonctionnalité}
 \begin{flushleft}
-Lorsque les activités à proximité de l'utilisateur sont localisées, celui-ci à la possibilité de choisir les activités dont il aimerait obtenir plus d'information.
+Lorsque les activités à proximité de l'utilisateur sont localisées, celui-ci a la possibilité de choisir les activités dont il aimerait obtenir plus d'informations.
 Par exemple, si l'utilisateur décide d'obtenir des informations sur les horaires des séances des films d'un cinéma, il lui suffit de cliquer sur le cinéma qui l’intéresse et le logiciel se chargera de lui apporter les informations demandées.
 \textbf{Find your way} va alors visiter le site web correspondant à l'activité ( dans l'exemple d'une activité de type cinéma, il va consulter le site \url{http://www.allocine.fr/} ) et extraire les informations des pages web du site.\linebreak
 
@@ -143,17 +148,17 @@ Les sites web consultés par \textbf{Find your way} en fonction de l'activité :
 
 \item Livre : \url{http://livre.fnac.com/}.
 
-\item Restaurant et bar : leur propre site web ( si ceux-ci sont référencés sur internet).
+\item Restaurant et bar : leurs propres sites web ( si ceux-ci sont référencés sur internet).
 
 \end{itemize}
 \end{flushleft}
 
 \subsection{Description technique}
 \begin{flushleft}
-Pour extraire l'information des pages web, \textbf{Find your way} un programme PHP qui va récuperer la page web en tant que chaine de caractère. Puis il utilise des expressions régulières pour filtrer et trouver les bonnes balises HTML contenant les informations à extraire.\newline
+Pour extraire l'information des pages web, \textbf{Find your way} un programme PHP qui va récupérer la page web en tant que chaîne de caractère. Puis il utilise des expressions régulières pour filtrer et trouver les bonnes balises HTML contenant les informations à extraire.\newline
 
 Exemple :
- Sur ce \href{http://www.allocine.fr/seance/salle_gen_csalle=P0231.html}{lien}, \textbf{Find your way} cherche à récuperer toute les titres des films à l'affiche. \\
+ Sur ce \href{http://www.allocine.fr/seance/salle_gen_csalle=P0231.html}{lien}, \textbf{Find your way} cherche à récupérer tous les titres des films à l'affiche. \\
  \includegraphics[scale=0.45]{./images/allocine_img1.png}
  
  Pour se faire il analyse le code source de la page html et reconnaît la chaîne de caractères (cadre bleu)  et récupère le titre (cadre rouge)\\
@@ -170,23 +175,23 @@ Exemple :
 
 \subsection{Description de la fonctionnalité}
 \begin{flushleft}
-Pour ajouter des lieux et avoir le suivit des votes, nous devons stocker tout ceci dans le base de donnée afin de pouvoir retourner les informations en temps voulu. \\
+Pour ajouter des lieux et avoir le suivi des votes, nous devons stocker tout ceci dans la base de données afin de pouvoir retourner les informations en temps voulu. \\
 
-Les votes sont stocké par Ip et par article. \\
+Les votes sont stockés par Ip et par article. \\
 \end{flushleft}
 
 \subsection{Description technique}
 \begin{flushleft}
-Pour effectuer les votes, nous avons du à l'aide du php, récupérer l'ip de la personne qui vote. Ainsi nous pouvons limiter le nombre de vote par ip et pas lieu. \\
+Pour effectuer les votes, nous avons dû, à l'aide du php, récupérer l'ip de la personne qui vote. Ainsi nous pouvons limiter le nombre de vote par ip et par lieu. \\
 
-Pour ajouter un lieu, nous récupérons la positon de la personne, puis encore une fois a l'aide des API google map qui inverse la géolocalisation ( de coordonnée donne une adresse ). Nous pouvons alors ajouter le lieu en base de donnée avec le nom fournit par l'utilisateur. \\
+Pour ajouter un lieu, nous récupérons la positon de la personne, puis encore une fois à l'aide des API google map qui inverse la géolocalisation ( des coordonnées donnent une adresse ). Nous pouvons alors ajouter le lieu en base de données avec le nom fourni par l'utilisateur. \\
 
 Lors de l'affichage nous devons encore une fois implémenter 
 \begin{verbatim}
 	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien
 \end{verbatim} 
-pour cause, nous devons savoir a combien de metre nous somme du nouveau lieu.
-Si le lieu est dans  notre périmètre alors nous l'affichons.\\
+puisque nous devons savoir à combien de mètres nous sommes du nouveau lieu.
+Si le lieu est dans notre périmètre alors nous l'affichons.\\
 \end{flushleft}
 
 
