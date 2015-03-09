@@ -1,0 +1,155 @@
+\documentclass[10pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{} 
+\lhead{ \hspace{0.1cm} M1 WI 2014-2015  \hspace{0.4cm} \vline}
+\chead{Interoperabilité}
+\rhead{K.B - B.B - K.L - N.R}
+\rfoot{\thepage}
+
+\author{Kevin BASCOL, Bachir BOUACHERIA, Kevin LAOUSSING, Nicolas REYNAUD}
+\title{ Interopérabilité: Find Your Way}
+
+\makeatletter
+\renewcommand{\thesection}{\@arabic\c@section}
+\makeatother
+
+\begin{document}
+
+\makeatletter
+	\begin{titlepage}
+	
+	\centering
+		{
+		\vspace*{5cm}
+		\hrule height 2pt
+		\vspace{0.7cm}
+		\Huge \textbf{\@title}}\\
+		\vspace{0.7cm}
+		\hrule height 2pt
+		
+		\vfill
+		\vspace{1cm}
+		\@author\\
+		\end{titlepage}
+\makeatother
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{Sommaire}
+\begingroup\makeatletter
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20pt% <---- à réduire pour avoir plus de place
+  }}\makeatother
+\tableofcontents
+\endgroup
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+
+\newgeometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%					INTRODUCTION					%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+\subsection{Description du projet}
+\begin{flushleft}
+\textbf{Find your way} est un logiciel de type "smart-cities" permettant de localiser toutes les activités à proximité de la position de l'utilisateur, dans un rayon donné pour celui-ci.\\
+Parmi les activités localisées par le logiciel, on y trouve les cinéma, les librairie, les bars, et les restaurants. Pour chacune de ses activités, le logiciel est capable de réunir des informations utiles tel que les prix des menus d'un restaurant désigné par l'utilisateur, les horaires des séances d'un film pour un cinéma donné, etc.
+\textbf{Find your way} utilise plusieurs sources de données et de format différents, qui justifie sa composante d'interopérabilité. On y trouve des données de géolocalisation, des données extraites des pages web de site internet, en plus d'utiliser des données stockées dans une base de donnée que les utilisateurs peuvent compléter.
+Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisation de l'utilisateur et des activités à proximité de celui-ci. Puis dans un deuxième temps, la recherche d'information pour des divers activités localisés. Dans un troisième temps, une description du système d'introduction d'information par l'utilisateur dans la base de donnée du logiciel.
+
+\end{flushleft}
+
+\subsection{Outils et supports}
+
+\begin{flushleft}
+\textbf{Find your way} est une application web réalisée avec divers outils et supports décrient dans cette liste :
+
+\begin{itemize}
+
+\item API Google à completer Nico 
+
+\item Framework x?  à complete Bachir
+
+\item Langage PHP, javascript, HTML, CSS. 
+
+\end{itemize}
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%					GEOLOCALISATION					%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{La géolocalisation}
+
+\subsection{Description de la fonctionnalité}
+\begin{flushleft}
+•
+\end{flushleft}
+
+\subsection{Description technique}
+\begin{flushleft}
+•
+\end{flushleft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%					RECHERCHE INTERNET				%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Recherche d'information sur internet}
+
+\subsection{Description de la fonctionnalité}
+\begin{flushleft}
+•
+\end{flushleft}
+
+\subsection{Description technique}
+\begin{flushleft}
+•
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%					BASE DE DONNEE					%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Base de donnée}
+
+\subsection{Description de la fonctionnalité}
+\begin{flushleft}
+•
+\end{flushleft}
+
+\subsection{Description technique}
+\begin{flushleft}
+•
+\end{flushleft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%						CONCLUSION					%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+\begin{flushleft}
+•
+\end{flushleft}
+\end{document}
