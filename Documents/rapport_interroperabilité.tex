@@ -130,13 +130,23 @@ Les sites web consultés par \textbf{Find your way} en fonction de l'activité :
 
 \item Livre : \url{http://livre.fnac.com/}.
 
-\item Restaurant et bar : leur site web ( si ceux-ci sont référencés ).
+\item Restaurant et bar : leur propre site web ( si ceux-ci sont référencés sur internet).
+
 \end{itemize}
 \end{flushleft}
 
 \subsection{Description technique}
 \begin{flushleft}
-•
+Pour extraire l'information des pages web, \textbf{Find your way} un programme PHP qui va récuperer la page web en tant que chaine de caractère. Puis il utilise des expressions régulières pour filtrer et trouver les bonnes balises HTML contenant les informations à extraire.\newline
+
+Exemple :
+ Sur ce \href{http://www.allocine.fr/seance/salle_gen_csalle=P0231.html}{lien}, \textbf{Find your way} cherche à récuperer toute les titres des films à l'affiche. \\
+ \includegraphics[scale=0.45]{./images/allocine_img1.png}
+ 
+ Pour se faire il analyse le code source de la page html et reconnaît la chaîne de caractères (cadre bleu)  et récupère le titre (cadre rouge)\\
+  \includegraphics[scale=0.45]{./images/allocine_img2.png}
+ avec cette expression régulière : \\
+ \includegraphics[scale=0.45]{./images/allocine_img3.png}
 \end{flushleft}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
