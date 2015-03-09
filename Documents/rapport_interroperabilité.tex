@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{enumitem}
+
 \usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
@@ -85,7 +86,10 @@ Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisat
 
 \begin{itemize}
 
-\item API Google à completer Nico 
+\item API Google Map V3 à retrouver a se lien :
+\begin{verbatim}
+	https://developers.google.com/maps/documentation/javascript/
+\end{verbatim} 
 
 \item Framework x?  à complete Bachir
 
@@ -102,12 +106,21 @@ Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisat
 
 \subsection{Description de la fonctionnalité}
 \begin{flushleft}
-•
+La géolocalisation nous permet de savoir avec plus ou moins d'exactitude la position d'une personne. Ceci ayant pour but de pouvoir identifier a l'aide des API Google map les lieux a proximité d'une personne. \\
+
+Il s'agit de la base de notre concepte, pouvoir localiser une personne.
 \end{flushleft}
 
 \subsection{Description technique}
 \begin{flushleft}
-•
+La géolocalisation se fait a l'aide de l'HTML5 et ses nouvelles fonctionnalité. Nous passons ensuite les informations a gooogle map pour avoir la liste des lieux a proximité de la personne dans un rayon donné. \\
+Nous obtenons alors une liste de lieu dans le format JSon que nous devons interpréter et retirer les bonnes informations.\\
+Ses lieux sont ensuite affiché sur la carte à l'aide marqueur. Grâce a du Javascript. \\
+
+Pour le calcule de distance, nous avons du implémenter ceci : 
+\begin{verbatim}
+	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien$ 
+\end{verbatim}
 \end{flushleft}
 
 
@@ -157,12 +170,23 @@ Exemple :
 
 \subsection{Description de la fonctionnalité}
 \begin{flushleft}
-•
+Pour ajouter des lieux et avoir le suivit des votes, nous devons stocker tout ceci dans le base de donnée afin de pouvoir retourner les informations en temps voulu. \\
+
+Les votes sont stocké par Ip et par article. \\
 \end{flushleft}
 
 \subsection{Description technique}
 \begin{flushleft}
-•
+Pour effectuer les votes, nous avons du à l'aide du php, récupérer l'ip de la personne qui vote. Ainsi nous pouvons limiter le nombre de vote par ip et pas lieu. \\
+
+Pour ajouter un lieu, nous récupérons la positon de la personne, puis encore une fois a l'aide des API google map qui inverse la géolocalisation ( de coordonnée donne une adresse ). Nous pouvons alors ajouter le lieu en base de donnée avec le nom fournit par l'utilisateur. \\
+
+Lors de l'affichage nous devons encore une fois implémenter 
+\begin{verbatim}
+	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien
+\end{verbatim} 
+pour cause, nous devons savoir a combien de metre nous somme du nouveau lieu.
+Si le lieu est dans  notre périmètre alors nous l'affichons.\\
 \end{flushleft}
 
 
