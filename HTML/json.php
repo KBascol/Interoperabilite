@@ -116,5 +116,5 @@
 
         <div id="map-canvas" style="height: 0px; width: 0px;"></div>
         <div id="liste" class="container">
-            <?php include ("./include/affiche_bdd.php"); ?>
+            <?php include ("include/affichage_bdd.php"); ?>
         </div>

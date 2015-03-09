@@ -10,7 +10,7 @@ function rad($x) {
         $lng = $_GET['lng'];
         $rad = $_GET['rad'];
         
-        include('./identifiant.php');        
+        include('identifiant.php');        
         $link = mysqli_connect($bdd_nom_serveur, $bdd_user, $bdd_mdp, $bdd) 
                     or die("Impossible de se connecter : " . mysql_error());
         
