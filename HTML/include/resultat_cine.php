@@ -17,7 +17,7 @@ if(isset($res[0])){
     $pageFilmAffiche = file_get_contents($res[0]);
 
     preg_match_all("/<\!--\s*picturezone\s*-->\n<div[^*<\/]*<\/div>\n<[^>]*>\n<[^>]*>\n<h2>\n<[^>]*>([^<]*)<\/a>/", $pageFilmAffiche, $titre,PREG_SET_ORDER);
-    preg_match_all("/<\!--\s*\/notationbar\s*-->\n<p>\n([^<]*)<\/p>/", $pageFilmAffiche, $description, PREG_SET_ORDER);
+    preg_match_all("/<\!--\s*\/notationbar\s*-->\n<p>\n(?:<span[^>]*>)*([^<]*)/", $pageFilmAffiche, $description, PREG_SET_ORDER);
     preg_match_all("/<\!--\s*class=\"titlebar\"\s*-->\n<p>\n(.*)\n\(([^\)]*)\)\n[^<]*<b>([^<]*)<\/b>/",$pageFilmAffiche, $information, PREG_SET_ORDER);
     preg_match_all("/<p>\nDe\s<a\shref=\'\/personne\/fichepersonne_gen_cpersonne=[^>]*>([^<]*)<\/a>/",$pageFilmAffiche, $realisateur, PREG_SET_ORDER);
     preg_match_all("/<a\shref=\"\/film\/fichefilm_gen_cfilm=[^>]*><img\ssrc=\'([^\']*)\'[^>]*><\/a>/", $pageFilmAffiche, $image, PREG_SET_ORDER);
@@ -36,7 +36,7 @@ if(isset($res[0])){
         </div>
         <div class="media-body" style="font-size:13px;">
           <h4 class="media-heading"><?php echo $titre[$i][1]; ?></h4>
-          <b>Réalisateur : </b>span><?php echo $realisateur[$i][1];?></span><br>
+          <b>Réalisateur : </b><span><?php echo $realisateur[$i][1];?></span><br>
           <b>Genre : </b><span><?php echo $information[$i][1]; ?></span><br>
           <b>Durée : </b><span><?php echo $information[$i][2]; ?></span>
           <b>Date de sorti : </b><span><?php echo $information[$i][3]; ?></span><br>
