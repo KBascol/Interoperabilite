@@ -7,19 +7,31 @@
 \usepackage{graphicx}
 \usepackage[normalem]{ulem}
 \definecolor{gris}{rgb}{0.75,0.75,0.75}
-\usepackage[top=1cm, bottom=2cm, left=0.5cm, right=0.5cm]{geometry}
+
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{} 
+\lhead{ \hspace{0.1cm} M1 WI 2014-2015  \hspace{0.4cm} \vline}
+\chead{Interoperabilité}
+\rhead{K.B - B.B - K.L - N.R}
+\rfoot{\thepage}
 
 \author{Nicolas REYNAUD}
-\title{Manuel d'utilisation}
-\date{\vfill 09 Mars 2015}
+\title{ Interopérabilité: Find Your Way, Manuel d'utilisation}
 
-\parindent=0pt
+\makeatletter
+\renewcommand{\thesection}{\@arabic\c@section}
+\makeatother
+
 
 \begin{document}
 
 \maketitle
 \newpage
-
 
 \renewcommand{\contentsname}{Sommaire}
 \tableofcontents
@@ -37,7 +49,7 @@ L'application étant entièrement basé sur ceci nous nous devons de la partager
 }%
 
 \newpage
-Une fois celle-ci autorisé nous remplissons le champs pour le rayon dans lequel nous cherchons les différents lieux. \\
+Une fois celle-ci autorisée nous remplissons le champs pour le rayon dans lequel nous cherchons les différents lieux. \\
 Puis validons le formulaire en cliquant simplement sur "Go !" \\
 {%
 \setlength{\fboxsep}{0pt}%
@@ -49,7 +61,7 @@ Puis validons le formulaire en cliquant simplement sur "Go !" \\
 \section{\uuline{Le choix}}
 
 Une fois le click effectué, nous somme redirigé sur la page qui nous montre la carte. \\
-Nous avons donc une liste non-exhaustive des lieux qui nous entour ( google map limitant a 20 curseurs sur la carte ). \\
+Nous avons donc une liste non-exhaustive des lieux qui nous entours ( google map limitant a 20 curseurs sur la carte ). \\
 {%
 \setlength{\fboxsep}{0pt}%
 \setlength{\fboxrule}{2pt}%
@@ -58,7 +70,7 @@ Nous avons donc une liste non-exhaustive des lieux qui nous entour ( google map 
 
 \newpage
 En "scrollant" alors sur la page nous pouvons accéder aux choix. \\
-Par exemple regardons les bars autour de la faculté des sciences, sur le campus carnot. \\
+Par exemple regardons les bars autour de la faculté des sciences (campus Carnot). \\
 {%
 \setlength{\fboxsep}{0pt}%
 \setlength{\fboxrule}{2pt}%
@@ -68,11 +80,11 @@ Par exemple regardons les bars autour de la faculté des sciences, sur le campus
 \newpage
 \section{\uuline{Vote et affichage}}
 
-Ici nous voici enfin sur la liste des commerces proche de nous, les distances ainsi que l'adresse sont affiché. \\
+Ici nous voici enfin sur la liste des commerces proche de nous, la distance ainsi que l'adresse est affichée. \\
 Nous pouvons également cliquer sur le nom du commerce pour avoir plus d'information sur celui ci. \\
-Par exemple dans les cinémas, la liste des films ainsi que les horaires de diffusions de ceci seront indiqué. \\
-Dans la partie "Librairie" une liste des nouveaux films sera affiché. \\
-Enfin dans la partie "Bar" une liste des cocktails de saisons sera affiché avec leurs ingrédients. \\
+Par exemple dans les cinémas, la liste des films ainsi que les horaires de diffusions de ceci seront indiqués. \\
+Dans la partie "Librairie" une liste des nouveaux films sera affichée. \\
+Enfin dans la partie "Bar" une liste des cocktails de saisons sera affichée avec leurs ingrédients. \\
 {%
 \setlength{\fboxsep}{0pt}%
 \setlength{\fboxrule}{2pt}%
@@ -81,7 +93,7 @@ Enfin dans la partie "Bar" une liste des cocktails de saisons sera affiché avec
 
 \newpage
 Nous voici, après avoir cliqué sur le titre du bar "Bol' Appétit" une liste de cocktail mais également la possibilité de voter pour se bar. \\
-Afin d'indiquer aux autres si celui ci est bien ou pas. \\
+Afin d'indiquer aux autres si celui-ci est bien ou pas. \\
 {%
 \setlength{\fboxsep}{0pt}%
 \setlength{\fboxrule}{2pt}%
@@ -104,9 +116,10 @@ Un mauvais bar aura dès lors une note négatif. \\
 \section{\uuline{Ajout de lieu}}
 
 Supposons maintenant que notre lieu favoris n'est pas présent dans la liste des bars, ou la liste des librairies etc.. \\
-Nous pouvons l'ajouter en cliquant simplement sur le bouton "Ajouter un lieu" un formulaire apparait alors. \\
+Nous pouvons l'ajouter en cliquant simplement sur le bouton "Ajouter un lieu" , présent en bas de la liste complète d'un thème donné. \\\
+un formulaire apparait alors. \\
 
-Nous allons alors ajouté un bar ici nous le nommerons "Carnot Bar" présent a l'adresse de la faculté. \\
+Nous allons alors ajouté un bar ici nous le nommerons "Carnot Bar" présent à l'adresse de la faculté. \\
 Cliquons ensuite sur "Ajouter le lieu".
 {%
 \setlength{\fboxsep}{0pt}%
@@ -115,7 +128,7 @@ Cliquons ensuite sur "Ajouter le lieu".
 }%
 
 \newpage
-Un message apparait alors pour nous indiquer que le lieu as bien été ajouté. \\
+Un message apparait alors pour nous indiquer que le lieu à bien été ajouté. \\
 Dans le cas ou le lieu existe déjà un message nous indique que "Le lieu existe déjà". \\
 {%
 \setlength{\fboxsep}{0pt}%
