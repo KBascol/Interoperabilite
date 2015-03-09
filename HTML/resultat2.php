@@ -107,7 +107,7 @@
         params = "lat="+query['lat']+"&lng="+query['lng']+"&nom="+nom_lieu.value+"&type="+query['q'];
         var xhr = new XMLHttpRequest();
 
-        xhr.open('GET', './ajout_lieu.php?'+params, true);  
+        xhr.open('GET', './include/ajout_lieu.php?'+params, true);  
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {

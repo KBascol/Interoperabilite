@@ -51,7 +51,7 @@ function rad($x) {
                         </div>
                         <div class="media-body">
                           <h3 class="media-heading"><a href="resultat3.php?q='.$q.'&nom='.$row['nom_lieu'].'&adr='.$row['adresse_lieu'].'">'.$row['nom_lieu'].'</a></h3>
-                          <p>Distance: '.$distance.'mètres</p>
+                          <p>Distance: '.$distance.' mètres</p>
                           <p>Adresse:'.$row['adresse_lieu'].'</p>
                         </div>
                       </div>

@@ -1,5 +1,5 @@
             <!-- un row qui contient les information d'un ciné -->
-            <div class="row">
+            <div class="row" style="margin-top: 15px;">
               <div class="media col-lg-10 col-lg-offset-1">
                 <div class="media-left">
                     <img class="media-object" src="img/50n.jpg" alt="..." style="height: 237px; width:160px;">

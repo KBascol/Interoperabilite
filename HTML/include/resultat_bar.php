@@ -23,14 +23,14 @@ preg_match_all('/<section[^>]*><img src=\"([^\"]*)\"(?:[^>]*>){3,3}([^<]*)(?:[^>
 $arraysize = sizeof($out);
 
 for ( $j = 1; $j < $arraysize; $j++ ) {
-    echo '<div class="row">
+    echo '<div class="row" style="margin-top: 15px;">
             <div class="media col-lg-10 col-lg-offset-1">
                 <div class="media-left">
                     <img class="media-object" src="'.$out[1][$j].'" alt="..." style="height: 237px; width:160px;">
                 </div>
                 <div class="media-body" style="font-size:13px;">
                     <h4 class="media-heading">'.$out[2][$j].'</h4>
-                    <span>'.$out[3][$j].'</span>
+                    <span>'.$out[3][$j].'</span><br>
                     <b>Ingrédients : </b>'.$out[4][$j].'
                 </div>
             </div>

@@ -29,7 +29,7 @@ if(isset($res[0])){
     for($i = 0; $i< $size; $i++) {
 ?>
     <!-- un row qui contient les information d'un livre -->
-    <div class="row">
+    <div class="row" style="margin-top: 15px;">
       <div class="media col-lg-10 col-lg-offset-1">
         <div class="media-left">
             <img class="media-object" src="<?php echo $image[$i][1]; ?>" alt="<?php echo $titre[$i][1]; ?>" style="height: 160px; width:120px;">
