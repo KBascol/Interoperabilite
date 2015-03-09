@@ -1,10 +1,12 @@
 <?php
-    if ( isset($_GET['lng']) && isset($_GET['lat']) && isset($_GET['type']) && isset($_GET['adresse']) && isset($_GET['nom']) ) {
+    if ( isset($_GET['lng']) && isset($_GET['lat']) && isset($_GET['type']) && isset($_GET['nom']) ) {
         $lng = $_GET['lng'];
         $lat = $_GET['lat'];
         $type = $_GET['type'];
-        $adresse = $_GET['adresse'];
         $nom = $_GET['nom'];
+        
+        $json = file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?latlng=".$lat.",".$lng);
+        $adresse = json_decode($json, TRUE)['results'][0]['formatted_address'];
         
         include('./identifiant.php');
         $link = mysqli_connect($bdd_nom_serveur, $bdd_user, $bdd_mdp, $bdd) 

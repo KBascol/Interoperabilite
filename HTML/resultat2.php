@@ -62,7 +62,9 @@
           <div class="modal-body">
             <h2>Ajoutez un lieu</h2>
             <hr class="star-primary">
-            <br><br><br>
+            <br>
+            <div id="result" style="color: green" class="label-success"></div>
+            <br>
             <div class="row">
               <div class="col-lg-12 text-center v-center" style="margin-top: 0px;">
                 <div class="col-lg-12 v-center" style="background-color:#2c3e50; padding-bottom:30px; border-radius:10px;">
@@ -86,4 +88,38 @@
 </div>
 
 <?php include "include/footer.php"; ?>
+
+
+<script>
+    var res = document.getElementById('result');
+    var nom_lieu = document.getElementById('nom');
+    var query = {};
+    var params;
+
+    function refresh() {
+        window.location.reload(true);
+    }
+
+    location.search.substr(1).split("&").forEach(function(item) {query[item.split("=")[0]] = item.split("=")[1]});
+    var add = document.getElementById('add');
+    add.addEventListener('click', function(e){
+        e.preventDefault();
+        params = "lat="+query['lat']+"&lng="+query['lng']+"&nom="+nom_lieu.value+"&type="+query['q'];
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', './ajout_lieu.php?'+params, true);  
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Si on a effectué la requête, l'utilisateur ne peut plus voter donc on efface les votes
+                res.innerHTML = xhr.responseText;
+                setTimeout(refresh, 500);
+            }
+        };
+
+        xhr.send();
+    },
+    false);
+
+</script>
 
