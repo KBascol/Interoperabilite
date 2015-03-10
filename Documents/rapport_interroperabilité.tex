@@ -186,6 +186,14 @@ Pour effectuer les votes, nous avons dû, à l'aide du php, récupérer l'ip de 
 
 Pour ajouter un lieu, nous récupérons la positon de la personne, puis encore une fois à l'aide des API google map qui inverse la géolocalisation ( des coordonnées donnent une adresse ). Nous pouvons alors ajouter le lieu en base de données avec le nom fourni par l'utilisateur. \\
 
+Nous avons du alors faire une corrélation entre les différentes tables suivante :
+\includegraphics[scale=0.5]{./images/BDD_Vote_Lieu.png}
+
+Ici nous avons les 2 champs lieu qui sont les mêmes mais également le champs id.VoteIp égale au champs id\_lieu.Lieu. \\
+
+
+Ainsi il existe une corrélation entre toutes nos tables. \\
+
 Lors de l'affichage nous devons encore une fois implémenter 
 \begin{verbatim}
 	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien
