@@ -87,9 +87,7 @@ Ce rapport présentera dans un premier temps la fonctionnalité de géolocalisat
 \begin{itemize}
 
 \item API Google Map V3 à retrouver a se lien :
-\begin{verbatim}
-	https://developers.google.com/maps/documentation/javascript/
-\end{verbatim} 
+\url{https://developers.google.com/maps/documentation/javascript/}
 
 \item Bootstrap.
 
@@ -123,9 +121,12 @@ Nous obtenons alors une liste de lieu dans le format Json que nous devons interp
 Ses lieux sont ensuite affichés sur la carte à l'aide marqueur. Grâce à du Javascript. \\
 
 Pour le calcul de distance, nous avons dû implémenter ceci : 
-\begin{verbatim}
-	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien$ 
-\end{verbatim}
+\url{http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien}
+
+Le HTML5 et sa fonction de géolocalisation sont a l'origine de ce pop-up : 
+\includegraphics[scale=0.5]{./images/demande.png} \\
+
+A noter : Le pop-up peut être différent en fonction du navigateur.
 \end{flushleft}
 
 
@@ -195,9 +196,8 @@ Ici nous avons les 2 champs lieu qui sont les mêmes mais également le champs i
 Ainsi il existe une corrélation entre toutes nos tables. \\
 
 Lors de l'affichage nous devons encore une fois implémenter 
-\begin{verbatim}
-	http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien
-\end{verbatim} 
+\url{http://fr.wikipedia.org/wiki/Distance_entre_deux_points_sur_le_plan_cart%C3%A9sien}
+
 puisque nous devons savoir à combien de mètres nous sommes du nouveau lieu.
 Si le lieu est dans notre périmètre alors nous l'affichons.\\
 \end{flushleft}
